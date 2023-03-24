@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">pil-mobile-basics</string>
+    <string name="counter">COUNTER</string>
+    <string name="counter_hint">Introduce a number</string>
 </resources>
