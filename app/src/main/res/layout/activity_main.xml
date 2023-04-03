@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".activity.MainActivity">
 
     <ImageView
         android:id="@+id/android_img"
@@ -14,13 +14,14 @@
         android:src="@drawable/ic_launcher_foreground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/android_desc" />
 
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_top_title"
+        android:layout_marginTop="@dimen/margin_top"
         android:text="@string/counter"
         android:textSize="@dimen/titles_size"
         android:textStyle="bold"
@@ -32,8 +33,8 @@
         android:id="@+id/counter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_top_counter"
-        android:text="15"
+        android:layout_marginTop="@dimen/margin_top"
+        android:text="@string/initial_number"
         android:textSize="@dimen/counter_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,23 +44,25 @@
         android:id="@+id/counter_hint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_top_title"
-        android:drawableStart="@drawable/add_alert"
+        android:layout_marginTop="@dimen/margin_top"
+        android:drawableStart="@drawable/edit_text"
         android:hint="@string/counter_hint"
         android:drawablePadding="@dimen/drawable_padding"
+        android:inputType="number"
         android:textSize="@dimen/titles_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/counter" />
+        app:layout_constraintTop_toBottomOf="@id/counter"
+        android:importantForAutofill="no" />
 
     <Button
         android:id="@+id/substract_button"
         style="@style/button_style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="-"
+        android:text="@string/minus"
         app:layout_constraintTop_toBottomOf="@id/counter_hint"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/reset_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/add_button" />
 
@@ -68,10 +71,21 @@
         style="@style/button_style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="+"
+        android:text="@string/plus"
         app:layout_constraintTop_toBottomOf="@id/counter_hint"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/reset_button"
         app:layout_constraintEnd_toStartOf="@id/substract_button"
+        app:layout_constraintStart_toStartOf= "parent"/>
+
+    <Button
+        android:id="@+id/reset_button"
+        style="@style/button_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/reset"
+        app:layout_constraintTop_toBottomOf="@id/add_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

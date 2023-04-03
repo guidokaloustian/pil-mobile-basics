@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="titles_size">30sp</dimen>
-    <dimen name="counter_size">80sp</dimen>
-    <dimen name="margin_top_title">50dp</dimen>
-    <dimen name="margin_top_counter">80dp</dimen>
+    <dimen name="counter_size">60sp</dimen>
+    <dimen name="margin_top">30dp</dimen>
     <dimen name="drawable_padding">12dp</dimen>
 </resources>
